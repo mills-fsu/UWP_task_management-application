@@ -85,11 +85,11 @@ namespace ListManagement.services
                     items = new ObservableCollection<Item>();
                 }
             }*/
-            var payload = JsonConvert
-                .DeserializeObject<List<Item>>(new WebRequestHandler()
-                    .Get("https://localhost:7020/ToDo").Result);
+            //var payload = JsonConvert
+            //    .DeserializeObject<List<Item>>(new WebRequestHandler()
+            //        .Get("https://localhost:7020/ToDo").Result);
 
-            payload.ForEach(items.Add);
+            //payload.ForEach(items.Add);
 
             listNav = new ListNavigator<Item>(FilteredItems, 2);
         }

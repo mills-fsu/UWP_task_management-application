@@ -57,5 +57,15 @@ namespace UWPListManagement.Dialogs
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
         }
+
+        private void CheckedCLick(object sender, RoutedEventArgs e)
+        {
+            if(CheckBox.IsChecked == true)
+            {
+                (DataContext as ToDo).IsCompleted = true;
+            }
+            else
+                (DataContext as ToDo).IsCompleted = false;
+        }
     }
 }

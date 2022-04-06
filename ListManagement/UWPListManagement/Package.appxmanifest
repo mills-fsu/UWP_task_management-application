@@ -8,14 +8,14 @@
 
   <Identity
     Name="6b08cbdf-28a6-4600-bc87-042fe0633b54"
-    Publisher="CN=chris.mills"
+    Publisher="CN=Modibo"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="6b08cbdf-28a6-4600-bc87-042fe0633b54" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>UWPListManagement</DisplayName>
-    <PublisherDisplayName>chris.mills</PublisherDisplayName>
+    <PublisherDisplayName>Modibo</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

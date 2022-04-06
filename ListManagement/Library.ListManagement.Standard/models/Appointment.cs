@@ -20,7 +20,7 @@ namespace ListManagement.models
 
         public override string ToString()
         {
-            return $"{Name} {Description} From {Start} to {End}";
+            return $"{Name} {Description} From {Start} to {End} Priority: {Priority}";
         }
     }
 }
