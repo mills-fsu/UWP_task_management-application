@@ -3,8 +3,8 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="Attendees" />
     <RootPropertyPathName Name="Priority" />
-    <RootPropertyPathName Name="End" />
-    <RootPropertyPathName Name="Start" />
+    <RootPropertyPathName Name="Boundend" />
+    <RootPropertyPathName Name="Boundstart" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Items" />

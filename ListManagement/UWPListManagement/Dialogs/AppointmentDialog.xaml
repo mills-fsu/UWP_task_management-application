@@ -45,7 +45,7 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Start"></TextBlock>
-            <DatePicker Grid.Column="1" SelectedDate="{Binding Path=Start, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+            <DatePicker Grid.Column="1" SelectedDate="{Binding Path=Boundstart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
         </Grid>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -53,7 +53,7 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="End"></TextBlock>
-            <DatePicker Grid.Column="1" SelectedDate="{Binding Path=End, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+            <DatePicker Grid.Column="1" SelectedDate="{Binding Path=Boundend, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
         </Grid>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
