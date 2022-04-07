@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="Attendees" />
     <RootPropertyPathName Name="Priority" />
-    <RootPropertyPathName Name="Appointment" />
     <RootPropertyPathName Name="End" />
     <RootPropertyPathName Name="Start" />
     <RootPropertyPathName Name="Description" />

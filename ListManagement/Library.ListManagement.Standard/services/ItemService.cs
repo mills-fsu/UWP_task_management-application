@@ -110,7 +110,7 @@ namespace ListManagement.services
 
         public void Save()
         {
-
+            persistencePath = $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\\SaveData.json";
             var listJson = JsonConvert.SerializeObject(Items, serializerSettings);
             if (File.Exists(persistencePath))
             {
@@ -118,6 +118,29 @@ namespace ListManagement.services
             }
             File.WriteAllText(persistencePath, listJson);
         }
+
+        public void Load()
+        {
+            persistencePath = $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\\SaveData.json";
+            if (File.Exists(persistencePath))
+            {
+                try
+                {
+                    var state = File.ReadAllText(persistencePath);
+                    if (state != null)
+                    {
+                        items = JsonConvert
+                        .DeserializeObject<ObservableCollection<Item>>(state, serializerSettings) ?? new ObservableCollection<Item>();
+                    }
+                }
+                catch (Exception e)
+                {
+                    File.Delete(persistencePath);
+                    items = new ObservableCollection<Item>();
+                }
+            }
+        }
+
 
         public Dictionary<object, Item> GetPage()
         {

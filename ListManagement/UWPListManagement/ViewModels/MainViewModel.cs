@@ -18,7 +18,6 @@ namespace UWPListManagement.ViewModels
         private ItemService itemService = ItemService.Current;
         private JsonSerializerSettings serializerSettings
             = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
-        private string persistencePath = $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\\SaveData.json";
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
@@ -60,15 +59,7 @@ namespace UWPListManagement.ViewModels
             itemService.Remove(SelectedItem);
         }
 
- /*       public void Complete()
-        {
-            var temp = SelectedItem as ToDo;
-            temp.IsCompleted = true;
-            //(SelectedItem as ToDo).IsCompleted = true;
-     
-            NotifyPropertyChanged();
-        }
- */
+ 
         public void Refresh()
         {
             NotifyPropertyChanged("Items");
@@ -76,37 +67,12 @@ namespace UWPListManagement.ViewModels
 
         public void save()
         {
-
-            var listJson = JsonConvert.SerializeObject(Items, serializerSettings);
-            if (File.Exists(persistencePath))
-            {
-                File.Delete(persistencePath);
-            }
-            File.WriteAllText(persistencePath, listJson);
+            itemService.Save();
         }
         public void Load()
         {
-            MainViewModel mvm;
-            if (File.Exists(persistencePath))
-            {
-                try
-                {
-                    mvm = JsonConvert
-                    .DeserializeObject<MainViewModel>(File.ReadAllText(persistencePath));
-                    foreach(Item i in mvm.Items)
-                        itemService.Add(i);
-
-                    SelectedItem = mvm.SelectedItem;
-                    NotifyPropertyChanged("Items");
-
-                }
-                catch (Exception)
-                {
-                    File.Delete(persistencePath);
-                }
-
-            }
-            
+            itemService.Load();
+            Refresh();
         }
         
         public void Search(string searchstr)
